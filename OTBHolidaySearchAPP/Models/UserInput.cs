@@ -6,7 +6,6 @@
         public string? TravlTo { get; set; }
         public string? DepartDate { get; set; }
         public int Nights { get; set; }
-
     }
 }
 

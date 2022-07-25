@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "OTBHolidaySearchAPP": {
+      "commandName": "Project",
+      "environmentVariables": {
+        " ASPNETCORE_ENVIRONMENT": "Development ",
+        "FlightJsonFile": "C:/Users/jebum/OneDrive/Documents/OTBSheryShajan/OTBHolidaySearchAPP/Flight.json"
+      }
+    }
+  }
+}

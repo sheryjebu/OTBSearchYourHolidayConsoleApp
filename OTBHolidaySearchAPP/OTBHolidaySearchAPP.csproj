@@ -15,9 +15,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="Models\Fights.cs" />
   </ItemGroup>
 </Project>

@@ -1,47 +1,39 @@
 ﻿// See https://aka.ms/new-console-template for more information/
-
-/* Class1. to store Fight objects file path as environment variable
- * Class2. to store Hotel objects file path as environment variable
- * Class Search - with search() based on user inputs/ output()
- * Class ToLoadJson data
- */
-
+// OTB Holiday Search program //
 using OTBHolidaySearchAPP.Models;
 
 class Program
 {
     static void Main()
     {
-        string hotelFileName = "/Users/sheryjebu/Projects/OTBHolidaySearchAPP/OTBHolidaySearchAPP/Hotels.json";
-        string flightFileName = "/Users/sheryjebu/Projects/OTBHolidaySearchAPP/OTBHolidaySearchAPP/Flight.json";
-        string? From = null; 
-        string? To = null;
-        string? DepartDate = null;
-        int Duration = 0;
+        string? nights;
+        string flightFileName = "C:/Users/jebum/OneDrive/Documents/OTBSheryShajan/OTBHolidaySearchAPP/Flight.json";
+        string hotelFileName = "C:/Users/jebum/OneDrive/Documents/OTBSheryShajan/OTBHolidaySearchAPP/Hotels.json";
 
-
-        LoadJson loadJson = new LoadJson(hotelFileName,flightFileName);
+        LoadJson loadJson = new LoadJson();
         var hotelList = loadJson.loadHoteldata(hotelFileName);
         var flightList = loadJson.loadFligtdata(flightFileName);
 
 
+        //Get user input
+        UserInput   userInput = new UserInput();
+        Console.WriteLine("Enter Departing From : ");
+        userInput.DepartFrom = Console.ReadLine();
 
+        Console.WriteLine("Enter Traveling To : ");
+        userInput.TravlTo = Console.ReadLine();
 
+        Console.WriteLine("Enter Departure Date (ex: YYYY-MM-DD) :");
+        userInput.DepartDate = Console.ReadLine();
 
-        SearchQuery searchQuery = new SearchQuery();
-        List< HolidaySearchResult> results = searchQuery.HolidaySearch(hotelList, flightList
-                                                  , From!, To!
-                                                  , DepartDate!, Duration
-                                                  );
+        Console.WriteLine("Enter Duration (Nights) :");
+        nights = Console.ReadLine();
+        userInput.Nights = Convert.ToInt32(nights);
 
-        /*foreach (var result in results)
-        {
-            Console.WriteLine("FlightID : {0}", result.FlightId);
-           // Console.WriteLine("AirLine : {0}", result.Airline);
-            Console.WriteLine("HotelId : {0}", result.HotelId);
-            //Console.WriteLine("To : {0}", result.To);
-
-        }*/
-
+        HolidaySearchQueries searchQuery = new HolidaySearchQueries();
+        List<HolidaySearchResult> results = searchQuery.GetHolidaySearchResults(hotelList, flightList,userInput.DepartFrom!
+                                                                                        , userInput.TravlTo!
+                                                                                        , userInput.DepartDate!
+                                                                                        , userInput.Nights);
     }
 }
