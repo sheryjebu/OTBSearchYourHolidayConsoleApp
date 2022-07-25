@@ -7,6 +7,9 @@
 
 Shown below is the Project Flow
 
+![ProgramFlowChart](https://user-images.githubusercontent.com/87146801/180698481-5fbfa70b-4271-4fed-9897-d0413dec75e3.jpg)
+
+
 <!-- Technologies Involved -->
 ##  Technologies Involved
 
@@ -27,4 +30,5 @@ Shown below is the Project Flow
     
     Below is the sample Input and output shown.
 
+![SampleInput_OutputData](https://user-images.githubusercontent.com/87146801/180698532-d9d684a7-5d8b-4c0f-b137-852de6f71168.jpg)
 
